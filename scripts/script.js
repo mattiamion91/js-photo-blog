@@ -33,7 +33,7 @@ axios.get(endpoint)
         <figure class="card">
             <img src="${url}" alt="${title}" class="main-img">
             <img src="./imgs/pin.svg" alt="pin-absolute" class="pin-img">
-            <figcaption>${title}<br>${date}</figcaption>
+            <figcaption>${title}<div>${date}</div></figcaption>
         </figure>
         `
             //console.log(cardsOut);
