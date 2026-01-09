@@ -40,14 +40,58 @@ axios.get(endpoint)
 
         });
 
-
         //inserisco in pagina le card accumulate
 
         outputCont.innerHTML = cardsOut;
 
-    }
+        //seleziono la card
 
-    )
+        const cardElement = document.querySelectorAll(".card");
+
+        //uso un ciclo foreach per poter avere un evento legato al click per ongi singola card
+
+        cardElement.forEach(card => {
+
+            //evento legato al click della card
+
+            card.addEventListener('click', (e) => {
+
+                //seleziono lelemento la cui classe deve sparirre
+
+                const divOver = document.querySelector('.overlay')
+
+                //uso la proprieta class list per rimuocvere la proprietá che mi nasconde l'overlay
+
+                divOver.classList.remove("hidden")
+
+                //console.log('hai cliccato');
+
+            })
+
+        })
+
+        //seleziono il bottone
+
+        const btnElement = document.querySelector(".close-btn")
+
+        //console.log(btnElement);
+
+        //evento legato al click del bottone
+
+        btnElement.addEventListener("click", (e) => {
+
+            //selezione lelemnto la cui lcasse deve riapparire
+
+            const divOver = document.querySelector('.overlay')
+
+            //uso la proprieta class list per rimuocvere la proprietá che mi nasconde l'overlay
+
+            divOver.classList.add("hidden")
+
+        })
+
+    })
+
     .catch(error => {
         //codice da eseguire in caso di errore
         console.error(error.message);

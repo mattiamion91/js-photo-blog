@@ -51,9 +51,9 @@ main {
 .pin-img {
     /*Immagine puntina in posizione absolute per essere centrata*/
     position: absolute;
-    top: 0%;
+    top: -10px;
     left: 50%;
-    transform: translate(50%);
+    transform: translate(-50%);
 }
 
 figcaption {
@@ -65,3 +65,32 @@ figcaption div {
     /*Div interno alla figcaption per poter usare un altro font*/
     font-family: 'Sometype Mono';
 }
+
+/*overlay*/
+.overlay{
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.50);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hidden {
+    display: none;
+}
+
+.overlay-img{
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.close-btn{
+    margin: 24px;
+    font-size: 24px;
+    padding: 12px 24px;
+}
+
