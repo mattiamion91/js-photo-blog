@@ -1,9 +1,6 @@
-//console.log("tutto ok");
-
 //seleziono il contenitore di output
 
 const outputCont = document.getElementById("container")
-//console.log(outputCont);
 
 //riferimento ad endpoint
 
@@ -15,7 +12,6 @@ axios.get(endpoint)
     .then(response => {
         //recupero array di oggetti dall'api
         const cards = response.data;
-        //console.log(cards);
 
         //cariabile di accumulo stringa output
         let cardsOut = ""
@@ -36,7 +32,6 @@ axios.get(endpoint)
             <figcaption>${title}<div>${date}</div></figcaption>
         </figure>
         `
-            //console.log(cardsOut);
 
         });
 
@@ -51,10 +46,34 @@ axios.get(endpoint)
         //uso un ciclo foreach per poter avere un evento legato al click per ongi singola card
 
         cardElement.forEach(card => {
+            //seleziono src immagine dentro la card
+
+            const smallImg = card.querySelector(".main-img")
+
+            /*
+            const urlImg = smallImg.src
+            
+            const altImg = smallImg.alt
+             
+            */
+
+            //destrutturo
+
+            const { src, alt } = smallImg
+
+            //seleziono immagine in overlay
+
+            const bigImg = document.querySelector(".overlay-img")
 
             //evento legato al click della card
 
             card.addEventListener('click', (e) => {
+
+                //riassegno l'src e l'alt all'imagine grade
+
+                bigImg.src = src
+
+                bigImg.alt = alt
 
                 //seleziono lelemento la cui classe deve sparirre
 
